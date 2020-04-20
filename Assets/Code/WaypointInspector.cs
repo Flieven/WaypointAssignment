@@ -130,17 +130,6 @@ public class WaypointInspector : Editor
 
         for (int i = 0; i < PointList.arraySize; i++)
         {
-
-            if (Point.Waypoints.Count == 1)
-            {
-                Handles.DrawLine(Point.transform.position, PointList.GetArrayElementAtIndex(0).vector3Value);
-            }
-            if(i+1 < Point.Waypoints.Count)
-            {
-                Handles.DrawLine(Point.transform.position, Point.Waypoints[0]);
-                Handles.DrawLine(PointList.GetArrayElementAtIndex(i).vector3Value, PointList.GetArrayElementAtIndex(i).vector3Value);
-            }
-
             if(i > 0) { PointList.GetArrayElementAtIndex(i).vector3Value = Handles.PositionHandle(Point.Waypoints[i], Quaternion.identity); }
             else { PointList.GetArrayElementAtIndex(i).vector3Value = Point.transform.position; }
         }
